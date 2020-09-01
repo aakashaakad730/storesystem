@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body style="background-color:#fddb3a;">
+<center>
+<form method="post" novalidate class="form-group">
+    {% csrf_token %}
+    <br>
+    <h3>GREENS CART</h3><br>
+    <div class="card" style="width: 20rem;background-color:#52575d;">
+  <img src="{% static 'image/logo.jpg' %}" class="card-img-top" alt="..." style="width: 20rem; height:15rem;">
+  <div class="card-body">
+    <h5 class="card-title" style="color:white;">USER LOGIN</h5><br>
+      {% for fm in form %}
+       <p class="card-text " style="color:white;">{{fm.label_tag}} {{fm}} {{fm.errors|striptags}}<br><br></p>
+      {% endfor %}
+    <input type="submit" value="Login" class="btn btn-danger"><br><br>
+  </div>
+</div>
+
+
+</form>
+</center>
+</body>
+</html>

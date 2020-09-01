@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div class="d-flex justify-content-center align-items-center login-container">
+        <form class="login-form text-center">
+            <h1 class="mb-5 font-weight-light text-uppercase">Greens Cart</h1>
+            <h1 class="mb-5 font-weight-light text-uppercase">Login</h1>
+            <div class="form-group">
+                <input type="text" class="form-control rounded-pill form-control-lg" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control rounded-pill form-control-lg" placeholder="Password">
+            </div>
+            <div class="forgot-link form-group d-flex justify-content-between align-items-center">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="remember">
+                    <label class="form-check-label" for="remember">Remember Password</label>
+                </div>
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <a class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase text-warning" href="{% url 'index' %}">Log in</a>
+        </form>
+    </div>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+    
+    
+</body>
+
+</html>

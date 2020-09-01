@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body style="background-color:#fddb3a;">
+  <br>
+{% block user %}
+  {{user.first_name}}
+{% endblock %}
+{% block content %}
+<center>
+<div class="container">
+  <br>
+   <h3>Sign Up User</h3>
+    {% if data %}
+      <div class="alert alert-success">{{name}} was Authenticated Successfully</div>
+    {% endif %}
+    <form method="post" novalidate class="form-group">
+    {% csrf_token %}
+    {% for form in user_form %}
+      {{form.label_tag}} {{form}} {{form.errors|striptags}}<br><br>
+    {% endfor %}
+    <input type="submit" value="submit" class="btn btn-danger">
+
+
+    </form>
+</div>
+{% endblock %}
+</center>
+</body>
+</html>

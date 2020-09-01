@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product list</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+{% block user %}
+  
+{% endblock %}
+{% block content %}
+<br>
+<div class="container">
+    <h3>DELETE PRODUCT</h3><br>
+        <form method="POST" novalidate class="form-group">
+            <div class="alert alert-primary">
+                <h3 class="text-danger">Confirm Your Request ?</h3><br>
+                <input type="submit" value="confirm" class="btn btn-warning align-center">
+            </div>
+            
+        </form>
+  
+  
+  
+</div>
+        
+    
+</div>
+{% endblock %}
+</body>
+</html>

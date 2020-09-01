@@ -1,0 +1,249 @@
+<html>
+{% load static %}
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <a class="navbar-brand" href="#">
+              <img src="{% static 'image/logo.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+              Greens Cart
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'prodlist' %}">Products</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link " href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-success" href="#">Welcome {{user.first_name}}</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-2g-0">
+                <a class="btn btn-outline-warning my-2 my-sm-1 " href="{% url 'user' %}">Create User</a>
+
+                <a class="btn btn-outline-warning my-2 my-sm-0 " href="{% url 'logout' %}">Logout</a>
+              </form>
+            </div>
+          </nav>
+         <!--menu bar-->
+          <nav class="navbar navbar-expand-lg navbar-primary bg-primary">
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+
+
+                  <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      User
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                      <a class="dropdown-item" href="#">User Details</a>
+
+                    </div>
+                  </div>
+                  <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Products
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                      <a class="dropdown-item" href="{% url 'productdetails' %}">Product Details</a>
+                      <a class="dropdown-item" href="{% url 'addproduct' %}">Add Product </a>
+                      <a class="dropdown-item" href="#">Update Product</a>
+                      <a class="dropdown-item" href="#">Remove Product</a>
+                    </div>
+                  </div>
+                  <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Customer
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                      <a class="dropdown-item" href="#">Customer Info</a>
+                      <a class="dropdown-item" href="#">Customer Purchase Data</a>
+                    </div>
+                  </div>
+                  <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      reports
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                      <a class="dropdown-item" href="#">Best Seller</a>
+                      <a class="dropdown-item" href="#">Monthly Profit</a>
+                    </div>
+                  </div>
+                </div>
+
+              </ul>
+            </div>
+        </nav>
+  <!-- carousel-->
+  <div class="container">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active ">
+          <img src="{% static 'image/img1.jpg' %}" class="d-block w-100 h-50" alt="slide1">
+      </div>
+      <div class="carousel-item ">
+        <img src="{% static 'image/img2.jpeg' %}" class="d-block w-100 h-50" alt="slide2">
+      </div>
+      <div class="carousel-item ">
+        <img src="{% static 'image/img3.jpeg' %}" class="d-block w-100 h-50" alt="slide3">
+      </div>
+    </div>
+  </div>
+  </div>
+  <!--jumbotron-->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Greens Cart</h1>
+      <p class="lead">Leaf vegetables, also called leafy greens, salad greens, pot herbs, vegetable greens, or simply greens,
+         are plant leaves eaten as a vegetable, sometimes accompanied by tender petioles and shoots. Although they come from
+         a very wide variety of plants, most share a great deal with other leaf vegetables in nutrition and cooking methods.
+         Nearly one thousand species of plants with edible leaves are known. Leaf vegetables most often come from short-lived herbaceous plants, such as lettuce and spinach. Woody plants of various species also provide edible leaves.
+
+        The leaves of many fodder crops are also edible for humans, but are usually only eaten under famine conditions.
+        Examples include alfalfa, clover, most grasses, including wheat and barley. These plants are often much more
+        prolific than traditional leaf vegetables, but exploitation of their rich nutrition is difficult, due to their
+        high fiber content. This can be overcome
+        by further processing such as drying and grinding into powder or pulping and pressing for juice..</p>
+    </div>
+  </div>
+  <!--cards-->
+  <div class="container">
+  <div class="card-deck">
+    <div class="card">
+      <img src="{% static 'image/img1.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Dosa</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'image/img3.jpeg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Noodles</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'image/img3.jpeg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Noodles</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <br>
+  <br>
+  <!--footer-->
+  <footer id="footer" class="footer-1">
+    <div class="main-footer widgets-dark typo-light">
+    <div class="container">
+    <div class="row">
+
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="widget subscribe no-box">
+    <h5 class="widget-title">Greens Cart<span></span></h5>
+    <p>Green Cart is a startup which encourages the organic foods we are making ready to make goods with greens
+      as its main ingredients  </p>
+    </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="widget no-box">
+    <h5 class="widget-title">Quick Links<span></span></h5>
+    <ul class="thumbnail-widget">
+    <li>
+    <div class="thumb-content"><a href="#.">Get Started</a></div>
+    </li>
+    <li>
+    <div class="thumb-content"><a href="#.">Top Leaders</a></div>
+    </li>
+    <li>
+    <div class="thumb-content"><a href="#.">Success Stories</a></div>
+    </li>
+    <li>
+    <div class="thumb-content"><a href="#.">Event/Tickets</a></div>
+    </li>
+    <li>
+    <div class="thumb-content"><a href="#.">News</a></div>
+    </li>
+    <li>
+    <div class="thumb-content"><a href="#.">Lifestyle</a></div>
+    </li>
+    <li>
+    <div class="thumb-content"><a href="#.">About</a></div>
+    </li>
+    </ul>
+    </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="widget no-box">
+    <h5 class="widget-title">Get Started<span></span></h5>
+    <p>Get access to your full Training and Marketing Suite.</p>
+    <a class="btn1" href="#." target="_blank">Register Now</a>
+    </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-3">
+
+    <div class="widget no-box">
+    <h5 class="widget-title">Contact Us<span></span></h5>
+
+    <p><a href="mailto:info@domain.com" title="glorythemes">greenscart.com</a></p>
+    <ul class="social-footer2">
+    <li class=""><a title="youtube" target="_blank" href="https://www.youtube.com/"><img alt="youtube" width="30" height="30" src=""></a></li>
+    <li class=""><a href="https://www.facebook.com/" target="_blank" title="Facebook"><img alt="Facebook" width="30" height="30" src=""></a></li>
+    <li class=""><a href="https://twitter.com" target="_blank" title="Twitter"><img alt="Twitter" width="30" height="30" src=""></a></li>
+    <li class=""><a title="instagram" target="_blank" href="https://www.instagram.com/"><img alt="instagram" width="30" height="30" src=""></a></li>
+    </ul>
+    </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+
+    <div class="footer-copyright">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-12 text-center">
+    <p>GreensCart © 2016. All rights reserved.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </footer>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+    </body>
+</html>

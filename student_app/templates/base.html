@@ -1,0 +1,99 @@
+<html>
+{% load static %}
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <a class="navbar-brand" href="#">
+              <img src="{% static 'image/logo.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+              Greens Cart
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'prodlist' %}">Products</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link " href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-success" href="#">Welcome {% block user %} {% endblock %} </a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-2g-0">
+                <a class="btn btn-outline-warning my-2 my-sm-1 " href="{% url 'user' %}">Create User</a>
+
+                <a class="btn btn-outline-warning my-2 my-sm-0 " href="{% url 'logout' %}">Logout</a>
+              </form>
+            </div>
+          </nav>
+         <!--menu bar-->
+          <nav class="navbar navbar-expand-lg navbar-primary bg-primary">
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+
+
+                  <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      User
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                      <a class="dropdown-item" href="#">User Details</a>
+
+                    </div>
+                  </div>
+                  <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Products
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                      <a class="dropdown-item" href="{% url 'productdetails' %}">Product Details</a>
+                      <a class="dropdown-item" href="{% url 'addproduct' %}">Add Product </a>
+                      <a class="dropdown-item" href="#">Update Product</a>
+                      <a class="dropdown-item" href="#">Remove Product</a>
+                    </div>
+                  </div>
+                  <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Customer
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                      <a class="dropdown-item" href="#">Customer Info</a>
+                      <a class="dropdown-item" href="#">Customer Purchase Data</a>
+                    </div>
+                  </div>
+                  <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      reports
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                      <a class="dropdown-item" href="#">Best Seller</a>
+                      <a class="dropdown-item" href="#">Monthly Profit</a>
+                    </div>
+                  </div>
+                </div>
+
+              </ul>
+            </div>
+        </nav>
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    {% block content %} 
+    {% endblock %}
+    </body>
+</html>

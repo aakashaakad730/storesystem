@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+{% block user %}
+   
+{% endblock %}
+{% block content %}
+<br>
+<div class="container">
+    <h3>THE PRODUCT DETAILS</h3><br>
+    <table class="table table-striped table-bordered table-hover table-condensed">
+
+
+        <tr class=table table-primary>
+          <th>ID</th>
+          <th>productname</th>
+          <th>QTY</th>
+          <th>MRP</th>
+            <th>category</th>
+            <th>description</th>
+            <th>Action</th>
+        </tr>
+        {% for prod in productmodel_list %}
+        <tr>
+            <td>PROD{{prod.id}}</td>
+            <td>{{prod.product_name}}</td>
+            <td>{{prod.quantity}}</td>
+            
+            <td>{{prod.MRP}}</td>
+            <td>{{prod.category.category_name}}</td>
+            <td>{{prod.category.description}}</td>
+            <td><a class="btn btn-success"  href="{% url 'updateprod' prod.id %}">Update</a> 
+                <a class="btn btn-danger"  href="{% url 'deleteprod' prod.id %}">Delete</a></td>
+            
+        </tr>
+        {% endfor %}
+        
+    </table>
+</div>
+{% endblock %}
+</body>
+</html>

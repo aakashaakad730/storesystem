@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product list</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+{% block user %}
+  
+{% endblock %}
+{% block content %}
+<br>
+<div class="container">
+    <h3>PRODUCTS AVAILABLE IN STORE</h3><br>
+        
+        
+
+<div class="row row-cols-1 row-cols-md-3">
+{% for prod in productlist_list %}
+  <div class="col mb-4">
+    <div class="card">
+      <img src="{{prod.image.url}}" class="card-img-top" style='height:15rem;'>
+      <div class="card-body">
+        <h5 class="card-title">{{ prod.title }}</h5>
+        <p class="card-text">{{prod.description}}</p>
+        <a href="#" class="btn btn-primary">Add To Cart</a>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+  
+  
+  
+</div>
+        
+    
+</div>
+{% endblock %}
+</body>
+</html>
